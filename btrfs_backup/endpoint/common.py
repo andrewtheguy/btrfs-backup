@@ -204,7 +204,10 @@ class Endpoint:
 
         if len(snapshots) > keep_num:
             # delete oldest snapshots
-            to_remove = snapshots[:-keep_num]
+            if keep_num == 0
+                to_remove = snapshots[:]
+            else:
+                to_remove = snapshots[:-keep_num]
             self.delete_snapshots(to_remove, **kwargs)
 
 
